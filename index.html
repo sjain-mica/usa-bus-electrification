@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Bus Electrification — Where to Start</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+</head>
+<body>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <!-- Section 1: Scale -->
+  <section class="section" id="section-1">
+    <div class="container">
+      <p class="eyebrow">The Scale</p>
+      <div class="hero-stats" id="hero-stats"></div>
+      <div class="map-wrap" id="map-1"></div>
+      <p class="map-caption">Number of diesel school buses per state</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Is the impact equal nationwide? -->
+  <section class="section" id="section-2">
+    <div class="container">
+      <h2>Is the impact equal nationwide?</h2>
+      <p class="lead">Where a bus operates determines how harmful it is.</p>
+      <div class="map-wrap" id="map-2"></div>
+      <p class="map-caption">Diesel impact per bus by state (combined health + climate)</p>
+      <div class="charts-row">
+        <div class="chart-wrap">
+          <p class="chart-title">Top 10 States — Climate Impact</p>
+          <div id="chart-climate"></div>
+        </div>
+        <div class="chart-wrap">
+          <p class="chart-title">Top 10 States — Health Impact</p>
+          <div id="chart-health"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Is electrification the catch-all? -->
+  <section class="section" id="section-3">
+    <div class="container">
+      <h2>Is electrification the catch all?</h2>
+      <p class="lead">Almost — but 174 counties tell a different story.</p>
+      <div class="map-wrap" id="map-3"></div>
+      <p class="map-caption">Electrification benefit per bus by county</p>
+      <div class="charts-row">
+        <div class="chart-wrap">
+          <p class="chart-title">Top 10 Counties — Highest EV Benefit</p>
+          <div id="chart-ev-top"></div>
+        </div>
+        <div class="chart-wrap">
+          <p class="chart-title">Top 10 Counties — Negative EV Benefit</p>
+          <div id="chart-ev-neg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Where should we electrify first? -->
+  <section class="section" id="section-4">
+    <div class="container">
+      <h2>Where should we electrify first?</h2>
+      <p class="lead">Higher diesel impact + greater EV benefit = biggest opportunity.</p>
+      <div class="scatter-layout">
+        <div class="chart-wrap">
+          <p class="chart-title">Opportunity by County</p>
+          <div id="scatter"></div>
+        </div>
+        <div class="chart-wrap">
+          <p class="chart-title">Top 10 Counties by Opportunity</p>
+          <div id="chart-priority"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
