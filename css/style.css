@@ -1,5 +1,52 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Hook section ── */
+#hook-scroller {
+  position: relative;
+  height: 350vh;
+  background: #0f172a;
+}
+
+#hook-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #000000;
+}
+
+#hook-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#hook-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 100vh));
+  width: 30vw;
+  padding: 36px 32px;
+  background: #000;
+  border: 1px solid #fff;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.hook-headline {
+  color: #fff;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 36px;
+  max-width: 680px;
+}
+
+.hook-headline span {
+  color: rgb(255, 214, 0);
+}
+
 :root {
   --text: #111827;
   --text-muted: #6b7280;

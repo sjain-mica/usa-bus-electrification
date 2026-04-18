@@ -1,3 +1,4 @@
+import { initHook } from './hook.js';
 import { initSection1 } from './section1.js';
 import { initSection2 } from './section2.js';
 import { initSection3 } from './section3.js';
@@ -7,15 +8,17 @@ const US_STATES   = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 const US_COUNTIES = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json';
 
 async function main() {
-  const [statesGeo, countiesGeo, busData, dieselData, evData, dieselEvData] = await Promise.all([
+  const [statesGeo, countiesGeo, busData, dieselData, evData, dieselEvData, nationalCosts] = await Promise.all([
     fetch(US_STATES).then(r => r.json()),
     fetch(US_COUNTIES).then(r => r.json()),
     fetch('./buses_per_state.json').then(r => r.json()),
     fetch('./diesel_impact_per_state.json').then(r => r.json()),
     fetch('./ev_benefit_per_county.json').then(r => r.json()),
     fetch('./diesel_vs_ev_per_county.json').then(r => r.json()),
+    fetch('./national_costs.json').then(r => r.json()),
   ]);
 
+  initHook(statesGeo, busData, nationalCosts);
   initSection1(statesGeo, busData);
   initSection2(statesGeo, dieselData);
   initSection3(countiesGeo, evData);

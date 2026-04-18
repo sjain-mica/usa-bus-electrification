@@ -44,7 +44,7 @@ export function initSection2(statesGeo, dieselData) {
   drawBarChart({
     container: document.getElementById('chart-climate'),
     data: climateTop10,
-    color: '#f97316',
+    color: '#00894b',
     tooltipFn: d => `<strong>${STATE_NAMES[d.label] || d.label}</strong><br>Climate: $${fmt(d.value)}/bus`,
     valueFormat: v => '$' + d3.format(',.0f')(v)
   });
@@ -58,7 +58,7 @@ export function initSection2(statesGeo, dieselData) {
   drawBarChart({
     container: document.getElementById('chart-health'),
     data: healthTop10,
-    color: '#ef4444',
+    color: '#2a8cb7',
     tooltipFn: d => `<strong>${STATE_NAMES[d.label] || d.label}</strong><br>Health: $${fmt(d.value)}/bus`,
     valueFormat: v => '$' + d3.format(',.0f')(v)
   });

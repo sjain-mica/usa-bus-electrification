@@ -12,8 +12,19 @@
 
   <div class="tooltip" id="tooltip"></div>
 
+  <!-- Hook: 29,803 buses → US map -->
+  <div id="hook-scroller">
+    <div id="hook-sticky">
+      <canvas id="hook-canvas"></canvas>
+      <div id="hook-overlay">
+        <p class="hook-headline">Annually, these buses drive <span>495 million miles</span> costing <span>$179 million</span></p>
+        <div id="hook-cost-chart"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Section 1: Scale -->
-  <section class="section" id="section-1">
+  <section class="section" id="section-1" style="display:none">
     <div class="container">
       <p class="eyebrow">The Scale</p>
       <div class="hero-stats" id="hero-stats"></div>
